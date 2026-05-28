@@ -1,8 +1,4 @@
-import {
-  increaseRiskLevel,
-  RiskLevel,
-  RiskLevelLabel,
-} from '../value-objects/risk-level.vo';
+import { increaseRiskLevel, RiskLevel } from '../value-objects/risk-level.vo';
 
 export interface RiskAssessmentOutput {
   finalRiskScore: string;
@@ -53,13 +49,5 @@ export class RiskContext {
 
   getRecommendations(): string[] {
     return [...this.recommendations];
-  }
-
-  toOutput(): RiskAssessmentOutput {
-    return {
-      finalRiskScore: RiskLevelLabel[this.level],
-      reasons: this.getReasons(),
-      recommendations: this.getRecommendations(),
-    };
   }
 }
