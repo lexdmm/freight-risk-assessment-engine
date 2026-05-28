@@ -14,6 +14,6 @@ export const RiskLevelLabel: Record<RiskLevel, string> = {
 
 export function increaseRiskLevel(current: RiskLevel, levels = 1): RiskLevel {
   const next = current + levels;
-  const capped = Math.min(next, RiskLevel.CRITICAL); // travazinha pra nao passar do 3 e nao dar problema de tipo
-  return capped;
+  const risklevel = Math.min(next, RiskLevel.CRITICAL); // travazinha pra nao passar do 3 e nao dar problema de tipo
+  return risklevel;
 }
