@@ -7,6 +7,7 @@ import { TransportHistoryRule } from '../rules/transport-history.rule';
 import { CargoValueInsuranceRule } from '../rules/cargo-value-insurance.rule';
 
 export class RiskEngineDomainService {
+  // Aqui e a lista com fluxo na ordem que tem que ser pra nao dar pau
   private readonly rules: RuleInterface[] = [
     new CargoTypeRule(),
     new WeatherRule(),
@@ -26,6 +27,7 @@ export class RiskEngineDomainService {
     for (const rule of this.rules) {
       rule.evaluate(transportOperation, riskContext);
 
+      //após cada regra executar, o engine verifica se o contexto foi marcado como final
       if (riskContext.isFinal()) {
         break;
       }
