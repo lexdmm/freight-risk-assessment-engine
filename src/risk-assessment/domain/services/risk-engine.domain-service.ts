@@ -21,7 +21,9 @@ export class RiskEngineDomainService {
    * @param transportOperation Operação de transporte a ser avaliada.
    * @returns Contexto de risco com o nível de risco final e as razões e recomendações.
    */
-  evaluate(transportOperation: TransportOperation): RiskContext {
+  evaluateTransportOperation(
+    transportOperation: TransportOperation,
+  ): RiskContext {
     const riskContext = new RiskContext();
 
     for (const rule of this.rules) {
