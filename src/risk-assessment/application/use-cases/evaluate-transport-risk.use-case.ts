@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { TransportOperation } from '../../domain/value-objects/transport-operation.vo';
 import { RiskEngineDomainService } from '../../domain/services/risk-engine.domain-service';
-import { RiskAssessmentPresenter } from '../../presenters/risk-assessment.presenter';
-import type { RiskAssessmentOutput } from '../../presenters/risk-assessment.presenter';
+import { RiskAssessmentPresenter } from '../presenters/risk-assessment.presenter';
+import type { RiskAssessmentOutput } from '../presenters/risk-assessment.presenter';
 
 @Injectable()
 export class EvaluateTransportRiskUseCase {

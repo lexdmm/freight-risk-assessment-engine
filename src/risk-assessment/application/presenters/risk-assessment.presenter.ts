@@ -1,7 +1,7 @@
 import {
   RiskLevel,
   RiskLevelLabel,
-} from '../domain/value-objects/risk-level.vo';
+} from '../../domain/value-objects/risk-level.vo';
 
 export interface RiskAssessmentOutput {
   finalRiskScore: string;

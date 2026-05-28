@@ -2,7 +2,7 @@ import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { EvaluateTransportRiskUseCase } from '../../application/use-cases/evaluate-transport-risk.use-case';
 import { Body, Controller, Post } from '@nestjs/common';
 import { CreateRiskAssessmentDto } from '../dtos/create-risk-assessment.dto';
-import type { RiskAssessmentOutput } from '../../presenters/risk-assessment.presenter';
+import type { RiskAssessmentOutput } from '../../application/presenters/risk-assessment.presenter';
 import { RiskAssessmentMapper } from './risk-assessment.mapper';
 
 @ApiTags('Risk Assessment')
