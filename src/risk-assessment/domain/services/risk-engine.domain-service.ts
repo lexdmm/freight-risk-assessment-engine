@@ -5,7 +5,9 @@ import { CargoTypeRule } from '../rules/cargo-type.rule';
 import { WeatherRule } from '../rules/weather.rule';
 import { TransportHistoryRule } from '../rules/transport-history.rule';
 import { CargoValueInsuranceRule } from '../rules/cargo-value-insurance.rule';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class RiskEngineDomainService {
   // Aqui e a lista com fluxo na ordem que tem que ser pra nao dar pau
   private readonly rules: RuleInterface[] = [

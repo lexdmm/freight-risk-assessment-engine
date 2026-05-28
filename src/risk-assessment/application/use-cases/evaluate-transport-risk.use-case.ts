@@ -1,12 +1,12 @@
+import { Injectable } from '@nestjs/common';
 import { TransportOperation } from '../../domain/value-objects/transport-operation.vo';
 import { RiskEngineDomainService } from '../../domain/services/risk-engine.domain-service';
-import {
-  RiskAssessmentOutput,
-  RiskAssessmentPresenter,
-} from '../../presenters/risk-assessment.presenter';
+import { RiskAssessmentPresenter } from '../../presenters/risk-assessment.presenter';
+import type { RiskAssessmentOutput } from '../../presenters/risk-assessment.presenter';
 
+@Injectable()
 export class EvaluateTransportRiskUseCase {
-  private readonly engine = new RiskEngineDomainService();
+  constructor(private readonly engine: RiskEngineDomainService) {}
 
   execute(transportOperation: TransportOperation): RiskAssessmentOutput {
     const riskContext =

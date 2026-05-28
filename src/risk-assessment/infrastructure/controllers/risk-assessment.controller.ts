@@ -1,14 +1,14 @@
-import { Body, Controller, Post } from '@nestjs/common';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { RiskAssessmentMapper } from './risk-assessment.mapper';
 import { EvaluateTransportRiskUseCase } from '../../application/use-cases/evaluate-transport-risk.use-case';
-import type { RiskAssessmentOutput } from '../../domain/entities/risk-context.entity';
+import { Body, Controller, Post } from '@nestjs/common';
 import { CreateRiskAssessmentDto } from '../dtos/create-risk-assessment.dto';
+import type { RiskAssessmentOutput } from '../../presenters/risk-assessment.presenter';
+import { RiskAssessmentMapper } from './risk-assessment.mapper';
 
 @ApiTags('Risk Assessment')
 @Controller('risk-assessment')
 export class RiskAssessmentController {
-  private readonly useCase = new EvaluateTransportRiskUseCase();
+  constructor(private readonly useCase: EvaluateTransportRiskUseCase) {}
 
   @Post()
   @ApiOperation({
