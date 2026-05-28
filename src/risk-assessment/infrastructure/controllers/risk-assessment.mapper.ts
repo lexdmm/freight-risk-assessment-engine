@@ -1,4 +1,4 @@
-import { CreateRiskAssessmentDto } from './create-risk-assessment.dto';
+import { CreateRiskAssessmentDto } from '../dtos/create-risk-assessment.dto';
 import { TransportOperation } from '../../domain/value-objects/transport-operation.vo';
 
 export class RiskAssessmentMapper {
