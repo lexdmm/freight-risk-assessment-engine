@@ -2,6 +2,12 @@ import { TransportOperation } from '../value-objects/transport-operation.vo';
 import { RiskContext } from '../entities/risk-context.entity';
 import { RuleInterface } from './rule.interface';
 
+/**
+ * Regra 3 (Histórico da Transportadora):
+Se traffic_accident_year_history > 5, o risco aumenta em um nível.
+Se traffic_accident_year_history > 10, o risco aumenta em dois níveis.
+ */
+
 export class TransportHistoryRule implements RuleInterface {
   evaluate(
     transportOperation: TransportOperation,
